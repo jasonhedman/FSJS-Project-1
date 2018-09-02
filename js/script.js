@@ -59,24 +59,8 @@ function printQuote() {
     }
     response += '</p>';
     document.getElementById('quote-box').innerHTML = response;
-    window.setInterval(function () {
-        var quote = getRandomQuote(quotes),
-            response = "";
-        body.style.background = body.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
-        response += '<p class="quote">' + quote.quote + '</p>';
-        response += '<p class="source">' + quote.source;
-        response += '<span class="title">' + ", " + quote.title + '</span>';
-        if (quote.citation) {
-            response += '<span class="citation">' + quote.citation + '</span>';
-        }
-        if (quote.year) {
-            response += '<span class="year">' + quote.year + '</span>';
-        }
-        response += '</p>';
-        document.getElementById('quote-box').innerHTML = response;
-    }, 5000);
+    setTimeout(printQuote, 5000);
 }
-
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
